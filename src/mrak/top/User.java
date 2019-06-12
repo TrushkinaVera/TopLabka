@@ -29,7 +29,8 @@ public class User implements Serializable {
     static public String encrypt(String source) {
         String encoded = "";
         try {
-            MessageDigest md = MessageDigest.getInstance("SHA-1");
+            MessageDigest md = MessageDigest.getInstance("MD2");
+            System.out.println(md);
             encoded = new String(md.digest(source.getBytes()));
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
